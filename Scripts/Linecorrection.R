@@ -1,0 +1,1 @@
+ggplot(Dataclean, aes(x = Segregating.Sites, y = Tajima.Pi)) + geom_point() + geom_jitter(alpha = .5, color = "blue")

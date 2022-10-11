@@ -1,0 +1,1 @@
+ggplot(Dataclean, aes( x = Segregating.Sites)) + geom_histogram(alpha = .25, color = "blue")

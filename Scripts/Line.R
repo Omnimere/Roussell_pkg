@@ -1,0 +1,1 @@
+ggplot(Dataclean, aes(x = Min.Pairwise.Difference.Excluding.Ambiguous, y = Tajima.Pi)) + geom_point() + geom_jitter(alpha = .5, color = "blue")

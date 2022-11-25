@@ -5,3 +5,6 @@
 .Rdata
 .httr-oauth
 .DS_Store
+Big.Job.Rcheck/
+Big.Job*.tar.gz
+Big.Job*.tgz

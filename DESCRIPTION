@@ -1,0 +1,18 @@
+Package: Big.Job
+Title: Functions to make things easier
+Version: 0.0.0.9000
+Authors@R: 
+    person("Amere","Roussell" ,, "amere.roussell@selu.edu", role = c("aut", "cre"))
+Description: 
+  This package contains functions that filter, selects, and plots data.
+License: MIT + file LICENSE
+Depends: 
+  R (>= 2.10)
+Imports:
+  phytools, tidyverse
+Suggests:
+  knitr, rmarkdown
+VignetteBuilder: knitr
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.1

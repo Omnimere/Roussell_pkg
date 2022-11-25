@@ -1,2 +1,0 @@
-Dataclean <- data %>% 
-  +     select(`Theta`, `Tajima.D`, `Tajima.Pi`, `Segregating.Sites`, `Max.Pairwise.Difference`, `Max.Pairwise.Difference.Excluding.Ambiguous`, `Max.Variable.Block.Length`, `Max.Variable.Block.Length.Excluding.Ambiguous`, `Min.Pairwise.Difference`, `Min.Pairwise.Difference.Excluding.Ambiguous`,`Number.Invariable.Block.Excluding.Ambiguous`, `Number.Invariant.Sites.Excluding.Ambiguous`)

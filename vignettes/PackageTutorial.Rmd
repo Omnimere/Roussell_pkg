@@ -1,0 +1,32 @@
+---
+title: "Package Tutorial"
+author: "Amere Roussell"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+# An Introduction to mY R PaCkAgE
+### OoOoFf O_o
+
+my R package is *gucci* mane **swaggylous**  **_imaculante_**
+No paragrpah space.
+
+Extra Paraprapg Fpace.
+
+```{r}
+sum(1,2,3)
+```
+## Installation Instructions
+
+```{r eval=FALSE, include=TRUE}
+install.packages("phytools")
+# But if you include text in code chunk, it must be commented fool
+```
+
+We can include test anywhere in the document
+
+![Caption](path/to/image)
+
+NO JPEG
+
+It is possible to include [hyperlinks](wright-lab.org).

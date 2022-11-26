@@ -7,6 +7,6 @@
 #' @return A linegraph
 
 Graph <- function(data, X, Y){
-  Linegraph <- ggplot(data, aes(x = X, y = Y)) + geom_line()
+  Linegraph <- ggplot(data, aes(x = {{X}}, y = {{Y}})) + geom_line(color = "navy")
   return(Linegraph)
 }

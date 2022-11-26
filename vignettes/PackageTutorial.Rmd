@@ -8,19 +8,57 @@ output: html_document
 # An Introduction to mY R PaCkAgE
 ### OoOoFf O_o
 
+The purpose of this package is to make using data easier. It will allow the user to remove unwanted data, and to plot information. Some times making plots and making a mean can be tedious with data. The point of these functions is to take out the middle step and allow the user to just put in the data and get their graphs.
 my R package is *gucci* mane **swaggylous**  **_imaculante_**
-No paragrpah space.
+No paragraph space.
 
-Extra Paraprapg Fpace.
-
-```{r}
-sum(1,2,3)
-```
 ## Installation Instructions
 
 ```{r eval=FALSE, include=TRUE}
 install.packages("phytools")
+install.packages("tidyverse")
+install.packages("ggplot")
 # But if you include text in code chunk, it must be commented fool
+```
+
+To download the data use the code below.
+
+```{r}
+download.file(url="https://raw.githubusercontent.com/Omnimere/Roussell_pkg/master/Data/simulated_data_pps_data.csv", destfile = "/cloud/project/simulated_data_pps_data.csv")
+```
+
+The file will be saved as following.
+
+```{r}
+data <- read.csv("/cloud/project/simulated_data_pps_data.csv")
+```
+
+First thing that we want to do is to select the columns that dont have strictly zeros. A total of twelve columns are selected and it should display the data.
+
+```{r}
+Dataclean <- Trial(data, Theta, Tajima.D, Tajima.Pi, Segregating.Sites, Max.Pairwise.Difference, Max.Pairwise.Difference.Excluding.Ambiguous, Max.Variable.Block.Length, Max.Variable.Block.Length.Excluding.Ambiguous, Min.Pairwise.Difference, Min.Pairwise.Difference.Excluding.Ambiguous, Number.Invariable.Block.Excluding.Ambiguous)
+```
+
+Function to use with own data.
+```{r}
+Trial(data, column1, column2, column3, column4, column5, column6, column7, column8, column9, column10, column11, column12)
+```
+
+Now we want to make sure that the data doesn't have any NA values.
+```{r}
+non(Dataclean)
+```
+mean
+
+###Now its time to make some graphs.
+The first graph will be a linegraph. The graph will show the
+```{r}
+Graph(Dataclean, Segregating.Sites, Tajima.Pi)
+```
+
+The next graph will be a histogram to show the distribution of amounts.
+```{r}
+Histo(Dataclean, Segregating.Sites)
 ```
 
 We can include test anywhere in the document

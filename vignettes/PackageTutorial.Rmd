@@ -7,7 +7,13 @@ output: html_document
 
 # An Introduction To My R Package
 
-The purpose of this package is to make using data easier. It will allow the user to remove unwanted data, and to plot information. Some times making plots and making a mean can be tedious with data. The point of these functions is to take out the middle step and allow the user to just put in the data and get their graphs.
+The purpose of this package is to make using data easier. It will allow the user to removed unwanted values, select columns, and plot information. Some times making plots and selecting data can be tedious, so this package is here to help. The point of these functions is to take out the middle step and allow the user to just put in the data and get their graphs.
+
+## Download The Package
+
+```{r}
+remotes::install_github("Omnimere/Big.Job")
+```
 
 ## Installation Instructions
 
@@ -28,18 +34,12 @@ The file will be saved as following.
 ```{r}
 data <- read.csv("/cloud/project/simulated_data_pps_data.csv")
 ```
-Now lets download the package
-```{r}
-remotes::install_github("Omnimere/Big.Job")
-```
-
 ### Functions
 
 If the data you are using is big or has columns that it specifically needed. This function will allow the you to select up to twelve of them. 
 
 ```{r}
 Trial(data, column1, column2, column3, column4, column5, column6, column7, column8, column9, column10, column11, column12)
-# function to use with own data
 ```
 
 ```{r}
@@ -60,7 +60,8 @@ midmean(Dataclean, Segregating.Sites, Tajima.Pi, Tajima.Pi)
 ```
 
 ###Now its time to make some graphs.
-The first graph will be a linegraph. The graph will show the
+
+The first graph will be a line graph. This can be used to see relations with the two columns.
 ```{r}
 Graph(data, column1, column2)
 ```
@@ -68,7 +69,7 @@ Graph(data, column1, column2)
 Graph(Dataclean, Segregating.Sites, Tajima.Pi)
 ```
 
-The next graph will be a histogram to show the distribution of amounts.
+The next graph will be a histogram that shows the distribution of values in a selected column. 
 ```{r}
 Histo(data, column)
 ```

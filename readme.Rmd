@@ -20,10 +20,12 @@ The major outputs of the package is to provides clean graphs to show information
 
 ## Installation
 
-The package depends on having tidyverse installed
+The package depends on having tidyverse, ggplot, and "phytools".
 
 ```{r}
 install.packages("tidyverse")
+install.packages("ggplot")
+install.packages("phytools")
 ```
 
 ## Usage Examples

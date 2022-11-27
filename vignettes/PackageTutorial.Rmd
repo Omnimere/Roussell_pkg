@@ -9,8 +9,6 @@ output: html_document
 ### OoOoFf O_o
 
 The purpose of this package is to make using data easier. It will allow the user to remove unwanted data, and to plot information. Some times making plots and making a mean can be tedious with data. The point of these functions is to take out the middle step and allow the user to just put in the data and get their graphs.
-my R package is *gucci* mane **swaggylous**  **_imaculante_**
-No paragraph space.
 
 ## Installation Instructions
 
@@ -48,7 +46,11 @@ Now we want to make sure that the data doesn't have any NA values.
 ```{r}
 non(Dataclean)
 ```
-mean
+
+Use this function for sectioning out columns to use in comparision to a mean.
+```{r}
+midmean(Dataclean, Segregating.Sites, Tajima.Pi, Tajima.Pi)
+```
 
 ###Now its time to make some graphs.
 The first graph will be a linegraph. The graph will show the
@@ -61,10 +63,3 @@ The next graph will be a histogram to show the distribution of amounts.
 Histo(Dataclean, Segregating.Sites)
 ```
 
-We can include test anywhere in the document
-
-![Caption](path/to/image)
-
-NO JPEG
-
-It is possible to include [hyperlinks](wright-lab.org).

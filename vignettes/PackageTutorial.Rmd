@@ -39,49 +39,49 @@ data <- read.csv("../simulated_data_pps_data.csv")
 
 With this function it allows the user to selected up to twelve columns to minimize the data set. For the data provided it has a total of thirty-six columns most of which are only zeros. This doesn't provide information to use to it best to minimize the data set to twelve columns that contain data. Which allows easier use of the data set.
 
-```{r}
+```{r,eval=FALSE}
 Trial(data, column1, column2, column3, column4, column5, column6, column7, column8, column9, column10, column11, column12)
 ```
 
-```{r}
+```{r,eval=FALSE}
 Data <- Trial(data, Theta, Tajima.D, Tajima.Pi, Segregating.Sites, Max.Pairwise.Difference, Max.Pairwise.Difference.Excluding.Ambiguous, Max.Variable.Block.Length, Max.Variable.Block.Length.Excluding.Ambiguous, Min.Pairwise.Difference, Min.Pairwise.Difference.Excluding.Ambiguous, Number.Invariable.Block.Excluding.Ambiguous)
 ```
 
 Once the data set is minized now we want to get rid of any NA's before we continue onward. This function will remove NA's and give TRUE response to let the user know that NA's have been removed.
-```{r}
+```{r,eval=FALSE}
 non(data)
 ```
 
-```{r}
+```{r,eval=FALSE}
 Dataclean <- non(Data)
 ```
 
 After the now clean data set is saved we can now start using the data. The function below allows the user to make another data set of three with two columns of choice and a column that needs a mean and make a new mean column. It will allow the user to visually see and compare the columns to the mean and save to use to make graphs.
-```{r}
+```{r,eval=FALSE}
 midmean(data, column1, column2, mean)
 ```
 
-```{r}
+```{r,eval=FALSE}
 midmean(Dataclean, Segregating.Sites, Tajima.Pi, Tajima.Pi)
 ```
 
 ###Now its time to make some graphs.
 
 The first graph that will be made will be the line graph. The graph is used to show the relationship between two columns. With the data provided the x value will be used as Segregating.Sites and the y values as Tajima.Pi. This check is done to make sure that Tajima.Pi is using Segregating.Sites. If the line graph should go diagonal showing that Tajima.Pi is using Segregating.Sites.
-```{r}
+```{r,eval=FALSE}
 Graph(data, column1, column2)
 ```
 
-```{r}
+```{r,eval=FALSE}
 Graph(Dataclean, Segregating.Sites, Tajima.Pi)
 ```
 
 The next graph will be a histogram that shows the distribution of values in a selected column. This is used to see each value distribution of the columns. With Number.Invariable.Block.Excluding.Ambiguous from just eyeing it mainly zeros and a few ones can be seen. So we want to know the amount of each value and to see if it more than just one and zero.
-```{r}
+```{r,eval=FALSE}
 Histo(data, column)
 ```
 
-```{r}
+```{r,eval=FALSE}
 Histo(Dataclean, Number.Invariable.Block.Excluding.Ambiguous)
 ```
 

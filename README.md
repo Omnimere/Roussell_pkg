@@ -5,17 +5,16 @@ date: "`r Sys.Date()`"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-## Introduction
+
+
+# Introduction
+
+
 The purpose of this package is to check the data a user is using. It will allow the user to remove unwanted data, and to plot information. Having a large sum of data can be hard to navigate through and visual see. So the point of these functions is to allow the user to minimize, check, and graph there data.
 
-# What does it do?
+## What does it do?
 This package is meant to check, remove, and plot data. The user will be able to remove NA's from the data set and to select specific columns to minimize data set. A mean amount is able to be calculated to use to make plots. Graphs like histograms and line graphs are also made with this package.
-# What type of data is it meant to work with?
 The data that works best for this package is large data that has unneeded columns.
-# What are the major outputs of your R package
 The major outputs of the package is to provide smaller clean data sets, and graphs to confirm data.
 
 ## Installation
@@ -26,6 +25,12 @@ The package depends on having tidyverse, ggplot, and "phytools".
 install.packages("tidyverse")
 install.packages("ggplot")
 install.packages("phytools")
+remotes::install_github("Omnimere/Big.Job")
+```
+```{r}
+library(tidyverse)
+library(Big.Job)
+library(phytools)
 ```
 
 ## Usage Examples

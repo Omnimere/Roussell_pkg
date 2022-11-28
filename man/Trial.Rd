@@ -2,7 +2,7 @@
 % Please edit documentation in R/Trial.R
 \name{Trial}
 \alias{Trial}
-\title{Allows the user to select columns of data to use up to twelve}
+\title{Selection of The Fittest}
 \usage{
 Trial(
   data,

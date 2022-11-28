@@ -2,7 +2,7 @@
 % Please edit documentation in R/HistogramSegregating.R
 \name{Histo}
 \alias{Histo}
-\title{This function will allow you to make a Histogram}
+\title{Histogram}
 \usage{
 Histo(data, X)
 }

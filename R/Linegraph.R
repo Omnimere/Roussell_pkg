@@ -1,4 +1,5 @@
-#' Taking the data and makes a linegraph
+#' @title Line Graph
+#' @description  Taking the data and makes a linegraph
 
 #' @param X a x value
 #' @param Y a y value

@@ -2,7 +2,7 @@
 % Please edit documentation in R/Linegraph.R
 \name{Graph}
 \alias{Graph}
-\title{Taking the data and makes a linegraph}
+\title{Line Graph}
 \usage{
 Graph(data, X, Y)
 }

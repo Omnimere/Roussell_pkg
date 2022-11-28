@@ -1,4 +1,5 @@
-#' Taking the data and getting rid of the NA
+#' @title NA Removable
+#' @description  Taking the data and getting rid of the NA
 
 #' @param data is the data that you are working with
 

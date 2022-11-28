@@ -2,7 +2,7 @@
 % Please edit documentation in R/NoNa.R
 \name{non}
 \alias{non}
-\title{Taking the data and getting rid of the NA}
+\title{NA Removable}
 \usage{
 non(data)
 }

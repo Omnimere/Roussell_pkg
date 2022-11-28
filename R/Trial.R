@@ -1,4 +1,5 @@
-#' Allows the user to select columns of data to use up to twelve
+#' @title Selection of The Fittest
+#' @description  Allows the user to select columns of data to use up to twelve
 
 #' @param column1-column12 are the columns that you want to specifically use in your dataset
 #' @param data is the data that you are working with

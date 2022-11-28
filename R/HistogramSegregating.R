@@ -1,4 +1,5 @@
-#' This function will allow you to make a Histogram
+#' @title Histogram
+#' @description  This function will allow you to make a Histogram
 
 #' @param data is the data that you are working with
 #' @param X the column you wish to use to make histogram

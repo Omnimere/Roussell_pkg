@@ -2,7 +2,7 @@
 % Please edit documentation in R/MeanPairwiseDif.R
 \name{midmean}
 \alias{midmean}
-\title{Taking the data and getting a mean}
+\title{Mean Maker}
 \usage{
 midmean(data, column1, column2, mn)
 }

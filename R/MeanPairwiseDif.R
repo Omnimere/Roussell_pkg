@@ -1,4 +1,5 @@
-#' Taking the data and getting a mean
+#' @title Mean Maker
+#' @description  Taking the data and getting a mean
 
 #' @param column1 first column 
 #' @param column2 second column

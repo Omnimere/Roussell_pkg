@@ -5,6 +5,7 @@
 #' @param data is the data that you are working with
 
 #' @return A linegraph
+#' @export
 
 Graph <- function(data, X, Y){
   Linegraph <- ggplot(data, aes(x = {{X}}, y = {{Y}})) + geom_line(color = "navy")

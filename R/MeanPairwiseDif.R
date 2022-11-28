@@ -6,6 +6,7 @@
 #' @param data is the data that you are working with
 
 #' @return give three columns to view with mean
+#' @export
  
 midmean <- function(data, column1, column2, mn){
   viewas <- data %>% 

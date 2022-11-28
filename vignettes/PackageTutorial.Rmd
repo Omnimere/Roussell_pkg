@@ -7,12 +7,13 @@ output: html_document
 
 # An Introduction To My R Package
 
-The purpose of this package is to make using data easier. It will allow the user to removed unwanted values, select columns, and plot information. Some times making plots and selecting data can be tedious, so this package is here to help. The point of these functions is to take out the middle step and allow the user to just put in the data and get their graphs.
+The purpose of this package is to check the data a user is using. It will allow the user to remove unwanted data, and to plot information. Having a large sum of data can be hard to navigate through and visual see. So the point of these functions is to allow the user to minimize, check, and graph there data.
 
 ## Download The Package
 
-```{r}
+```{r eval=FALSE}
 remotes::install_github("Omnimere/Big.Job")
+library(Big.Job)
 ```
 
 ## Installation Instructions
@@ -32,48 +33,55 @@ download.file(url="https://raw.githubusercontent.com/Omnimere/Roussell_pkg/maste
 The file will be saved as following.
 
 ```{r}
-data <- read.csv("/cloud/project/simulated_data_pps_data.csv")
+data <- read.csv("../simulated_data_pps_data.csv")
 ```
 ### Functions
 
-If the data you are using is big or has columns that it specifically needed. This function will allow the you to select up to twelve of them. 
+With this function it allows the user to selected up to twelve columns to minimize the data set. For the data provided it has a total of thirty-six columns most of which are only zeros. This doesn't provide information to use to it best to minimize the data set to twelve columns that contain data. Which allows easier use of the data set.
 
 ```{r}
 Trial(data, column1, column2, column3, column4, column5, column6, column7, column8, column9, column10, column11, column12)
 ```
 
 ```{r}
-Dataclean <- Trial(data, Theta, Tajima.D, Tajima.Pi, Segregating.Sites, Max.Pairwise.Difference, Max.Pairwise.Difference.Excluding.Ambiguous, Max.Variable.Block.Length, Max.Variable.Block.Length.Excluding.Ambiguous, Min.Pairwise.Difference, Min.Pairwise.Difference.Excluding.Ambiguous, Number.Invariable.Block.Excluding.Ambiguous)
+Data <- Trial(data, Theta, Tajima.D, Tajima.Pi, Segregating.Sites, Max.Pairwise.Difference, Max.Pairwise.Difference.Excluding.Ambiguous, Max.Variable.Block.Length, Max.Variable.Block.Length.Excluding.Ambiguous, Min.Pairwise.Difference, Min.Pairwise.Difference.Excluding.Ambiguous, Number.Invariable.Block.Excluding.Ambiguous)
 ```
 
-Now we want to make sure that the data doesn't have any NA values.
+Once the data set is minized now we want to get rid of any NA's before we continue onward. This function will remove NA's and give TRUE response to let the user know that NA's have been removed.
 ```{r}
-non(Dataclean)
+non(data)
 ```
 
-Use this function for sectioning out columns to use in comparison to a mean.
+```{r}
+Dataclean <- non(Data)
+```
+
+After the now clean data set is saved we can now start using the data. The function below allows the user to make another data set of three with two columns of choice and a column that needs a mean and make a new mean column. It will allow the user to visually see and compare the columns to the mean and save to use to make graphs.
 ```{r}
 midmean(data, column1, column2, mean)
 ```
+
 ```{r}
 midmean(Dataclean, Segregating.Sites, Tajima.Pi, Tajima.Pi)
 ```
 
 ###Now its time to make some graphs.
 
-The first graph will be a line graph. This can be used to see relations with the two columns.
+The first graph that will be made will be the line graph. The graph is used to show the relationship between two columns. With the data provided the x value will be used as Segregating.Sites and the y values as Tajima.Pi. This check is done to make sure that Tajima.Pi is using Segregating.Sites. If the line graph should go diagonal showing that Tajima.Pi is using Segregating.Sites.
 ```{r}
 Graph(data, column1, column2)
 ```
+
 ```{r}
 Graph(Dataclean, Segregating.Sites, Tajima.Pi)
 ```
 
-The next graph will be a histogram that shows the distribution of values in a selected column. 
+The next graph will be a histogram that shows the distribution of values in a selected column. This is used to see each value distribution of the columns. With Number.Invariable.Block.Excluding.Ambiguous from just eyeing it mainly zeros and a few ones can be seen. So we want to know the amount of each value and to see if it more than just one and zero.
 ```{r}
 Histo(data, column)
 ```
+
 ```{r}
-Histo(Dataclean, Segregating.Sites)
+Histo(Dataclean, Number.Invariable.Block.Excluding.Ambiguous)
 ```
 

@@ -4,6 +4,7 @@
 #' @param data is the data that you are working with
 
 #' @return it will return a clean dataset with the desired columns to work with
+#' @export
 
 Trial <- function(data, column1, column2, column3, column4, column5, column6, column7, column8, column9, column10, column11, column12){
   dataclean <- data %>% 

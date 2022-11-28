@@ -25,7 +25,7 @@ The package depends on having tidyverse, ggplot, and "phytools".
 install.packages("tidyverse")
 install.packages("ggplot")
 install.packages("phytools")
-remotes::install_github("Omnimere/Big.Job")
+remotes::install_github("Omnimere/Roussell_pkg")
 ```
 ```{r}
 library(tidyverse)

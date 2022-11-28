@@ -12,7 +12,7 @@ The purpose of this package is to check the data a user is using. It will allow 
 ## Download The Package
 
 ```{r eval=FALSE}
-remotes::install_github("Omnimere/Big.Job")
+remotes::install_github("Omnimere/Roussell_pkg")
 library(Big.Job)
 ```
 
@@ -22,7 +22,10 @@ library(Big.Job)
 install.packages("phytools")
 install.packages("tidyverse")
 install.packages("ggplot")
+library(tidyverse)
+library(phytools)
 ```
+
 
 To download the data use the code below.
 

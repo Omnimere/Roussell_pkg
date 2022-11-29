@@ -40,6 +40,10 @@ data <- read.csv("../simulated_data_pps_data.csv")
 data <- read.csv("/cloud/project/simulated_data_pps_data.csv")
 # Use this one if first doesn't work
 ```
+```{r,eval=FALSE}
+View(data)
+#to see the larger data set
+```
 
 ### Functions
 
@@ -54,7 +58,7 @@ Dataclean <- Trial(data, Theta, Tajima.D, Tajima.Pi, Segregating.Sites, Max.Pair
 ```
 ```{r,eval=FALSE}
 View(Dataclean)
-# too see minimized dataset
+# too see minimized data set
 ```
 
 After the data set is saved we can now start using the data. The function below allows the user to make another data set of three with two columns of choice and a column that needs a mean and make a new mean column. It will allow the user to visually see and compare the columns to the mean and save to use to make graphs or comparisons. 

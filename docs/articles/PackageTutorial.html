@@ -109,6 +109,12 @@ check, and graph there data.</p>
 <p>The file will be saved as following.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html" class="external-link">read.csv</a></span><span class="op">(</span><span class="st">"../simulated_data_pps_data.csv"</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html" class="external-link">read.csv</a></span><span class="op">(</span><span class="st">"/cloud/project/simulated_data_pps_data.csv"</span><span class="op">)</span></span>
+<span><span class="co"># Use this one if first doesn't work</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span>
+<span><span class="co">#to see the larger data set</span></span></code></pre></div>
 <div class="section level4">
 <h4 id="functions">Functions<a class="anchor" aria-label="anchor" href="#functions"></a>
 </h4>
@@ -117,39 +123,45 @@ columns to minimize the data set. For the data provided it has a total
 of thirty-six columns most of which are only zeros. This doesn’t provide
 information to use to it best to minimize the data set to twelve columns
 that contain data. Which allows easier use of the data set.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/Trial.html">Trial</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">column1</span>, <span class="va">column2</span>, <span class="va">column3</span>, <span class="va">column4</span>, <span class="va">column5</span>, <span class="va">column6</span>, <span class="va">column7</span>, <span class="va">column8</span>, <span class="va">column9</span>, <span class="va">column10</span>, <span class="va">column11</span>, <span class="va">column12</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">Dataclean</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/Trial.html">Trial</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">Theta</span>, <span class="va">Tajima.D</span>, <span class="va">Tajima.Pi</span>, <span class="va">Segregating.Sites</span>, <span class="va">Max.Pairwise.Difference</span>, <span class="va">Max.Pairwise.Difference.Excluding.Ambiguous</span>, <span class="va">Max.Variable.Block.Length</span>, <span class="va">Max.Variable.Block.Length.Excluding.Ambiguous</span>, <span class="va">Min.Pairwise.Difference</span>, <span class="va">Min.Pairwise.Difference.Excluding.Ambiguous</span>, <span class="va">Number.Invariable.Block.Excluding.Ambiguous</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/View.html" class="external-link">View</a></span><span class="op">(</span><span class="va">Dataclean</span><span class="op">)</span></span>
+<span><span class="co"># too see minimized data set</span></span></code></pre></div>
 <p>After the data set is saved we can now start using the data. The
 function below allows the user to make another data set of three with
 two columns of choice and a column that needs a mean and make a new mean
 column. It will allow the user to visually see and compare the columns
-to the mean and save to use to make graphs.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+to the mean and save to use to make graphs or comparisons.</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/midmean.html">midmean</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">column1</span>, <span class="va">column2</span>, <span class="va">mean</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/midmean.html">midmean</a></span><span class="op">(</span><span class="va">Dataclean</span>, <span class="va">Segregating.Sites</span>, <span class="va">Tajima.Pi</span>, <span class="va">Tajima.Pi</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/midmean.html">midmean</a></span><span class="op">(</span><span class="va">Dataclean</span>, <span class="va">Segregating.Sites</span>, <span class="va">Tajima.D</span>, <span class="va">Tajima.Pi</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">midmean</span>(Dataclean, Dataclean<span class="sc">$</span>Segregating.Sites, Dataclean<span class="sc">$</span>Tajima.D, Dataclean<span class="sc">$</span>Tajima.Pi)<span class="er">)</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Use this if error says columns can't be found, after first use the error shouldn't show again.</span></span></code></pre></div>
 <p>###Now its time to make some graphs.</p>
 <p>The first graph that will be made will be the linear regression. The
 graph is used to show the relationship between two columns. With the
 data provided the x value will be used as Segregating.Sites and the y
 values as Tajima.Pi. This check is done to make sure that Tajima.Pi is
 using Segregating.Sites. If the dots are close to the linear regression
-then it means that Tajima.Pi incorporates Segregating.Sites..</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+then it means that Tajima.Pi incorporates Segregating.Sites.</p>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/Graph.html">Graph</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">column1</span>, <span class="va">column2</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/Graph.html">Graph</a></span><span class="op">(</span><span class="va">Dataclean</span>, <span class="va">Segregating.Sites</span>, <span class="va">Tajima.Pi</span><span class="op">)</span></span></code></pre></div>
 <p>The next graph will be a histogram that shows the distribution of
 values in a selected column. This is used to see each value distribution
-of the columns. With Number.Invariable.Block.Excluding.Ambiguous from
-just eyeing it mainly zeros and a few ones can be seen. So we want to
-know the amount of each value and to see if it more than just one and
+of the columns. This helps with majority of the columns in the data set,
+but will use Number.Invariable.Block.Excluding.Ambiguous since from just
+eyeing it mainly zeros and a few ones can be seen. So we want to know
+the amount of each value and to see if it more than just one and
 zero.</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/Histo.html">Histo</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">column</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/Histo.html">Histo</a></span><span class="op">(</span><span class="va">Dataclean</span>, <span class="va">Number.Invariable.Block.Excluding.Ambiguous</span><span class="op">)</span></span></code></pre></div>
 <p>With the last function it will make a scatter plot. Segregating.Sites
 and Max.Pairwise.Difference is used to see the relation with the max
@@ -157,9 +169,9 @@ difference with the segregating sites. The output should be many blue
 dots scattered going diagonal to the right. This shows that as the
 Segregating.Sites increase the Max.Pairwise.Difference increases and the
 amount of those differences increases.</p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/Scatter.html">Scatter</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/Scatter.html">Scatter</a></span><span class="op">(</span><span class="va">Dataclean</span>, <span class="va">Segregating.Sites</span>, <span class="va">Max.Pairwise.Difference</span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>

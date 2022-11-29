@@ -57,7 +57,7 @@ View(Dataclean)
 # too see minimized dataset
 ```
 
-After the data set is saved we can now start using the data. The function below allows the user to make another data set of three with two columns of choice and a column that needs a mean and make a new mean column. It will allow the user to visually see and compare the columns to the mean and save to use to make graphs or comparisions. 
+After the data set is saved we can now start using the data. The function below allows the user to make another data set of three with two columns of choice and a column that needs a mean and make a new mean column. It will allow the user to visually see and compare the columns to the mean and save to use to make graphs or comparisons. 
 ```{r,eval=FALSE}
 midmean(data, column1, column2, mean)
 ```

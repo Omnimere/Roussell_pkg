@@ -75,34 +75,34 @@
 <div class="section level2">
 <h2 id="what-does-it-do">What does it do?<a class="anchor" aria-label="anchor" href="#what-does-it-do"></a>
 </h2>
-<p>This package is meant to check, remove, and plot data. The user will be able to remove NA’s from the data set and to select specific columns to minimize data set. A mean amount is able to be calculated to use to make plots. Graphs like histograms and line graphs are also made with this package. The data that works best for this package is large data that has unneeded columns. The major outputs of the package is to provide smaller clean data sets, and graphs to confirm data.</p>
+<p>This package is meant to check, remove, and plot data. The user will be able to select specific columns to minimize data set. A mean amount is able to be calculated to use to make plots. Graphs like histogram, scatter plot, and linear regression are also made with this package. The data that works best for this package is large data that has unneeded columns. The major outputs of the package is to provide smaller clean data sets, and graphs to confirm data.</p>
 </div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>The package depends on having tidyverse, ggplot, and “phytools”.</p>
+<p>The package depends on having tidyverse, remotes, and ggplot.</p>
 <pre class="{r}"><code><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"tidyverse"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"ggplot"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"phytools"</span><span class="op">)</span></span>
-<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"Omnimere/Big.Job"</span><span class="op">)</span></span></code></pre>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span></span></code></pre>
 <pre class="{r}"><code><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">Big.Job</span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/liamrevell/phytools" class="external-link">phytools</a></span><span class="op">)</span></span></code></pre>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://remotes.r-lib.org" class="external-link">remotes</a></span><span class="op">)</span></span></code></pre>
+<pre class="{r}"><code><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"Omnimere/Roussell_pkg"</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">Big.Job</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="section level2">
 <h2 id="usage-examples">Usage Examples<a class="anchor" aria-label="anchor" href="#usage-examples"></a>
 </h2>
 <p>When working with data there maybe many columns of data and the user may want to make it smaller so the next function will allow the user to select up to twelve columns to minimize their dataset.</p>
 <pre class="{r}"><code><span><span class="fu"><a href="reference/Trial.html">Trial</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">column1</span>, <span class="va">column2</span>, <span class="va">column3</span>, <span class="va">column4</span>, <span class="va">column5</span>, <span class="va">column6</span>, <span class="va">column7</span>, <span class="va">column8</span>, <span class="va">column9</span>, <span class="va">column10</span>, <span class="va">column11</span>, <span class="va">column12</span><span class="op">)</span></span></code></pre>
-<p>The user will want NA’s removed from there data before they start making plots and visualizing means. This will removed the NA’s from the data and confirm the removal of them.</p>
-<pre class="{r}"><code><span><span class="fu"><a href="reference/non.html">non</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span></code></pre>
 <p>If a mean is needed then this function will provide it. All that is need is the data the two columns of choice and the mean of a column that is needed. The function will then show the three columns for visual check. This can be saved to then be used to make graphs to incorporate the mean.</p>
 <pre class="{r}"><code><span><span class="fu"><a href="reference/midmean.html">midmean</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">column1</span>, <span class="va">column2</span>, <span class="va">mean</span><span class="op">)</span></span></code></pre>
-<p>The last two functions allows the use to make a line graph or a histogram. The functions are listed in order stated above.</p>
+<p>The last two functions allows the use to make a linear regression, histogram, and scatterplot. The functions are listed in order stated above.</p>
 <p>The line graph is used to confirm a linear regression of two data sets. This can be used to make sure the column data is accurate with one another.</p>
 <pre class="{r}"><code><span><span class="fu"><a href="reference/Graph.html">Graph</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span></code></pre>
 <p>The histogram is used to so the distribution of values of a columns. This can be used to check the amount of each value.</p>
 <pre class="{r}"><code><span><span class="fu"><a href="reference/Histo.html">Histo</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">x</span><span class="op">)</span></span></code></pre>
+<p>The scatter plot is used to observe the relation between two sets in the data set.</p>
+<pre class="{r}"><code><span><span class="fu"><a href="reference/Scatter.html">Scatter</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span></code></pre>
 </div>
 </div>
   </div>

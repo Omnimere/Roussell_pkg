@@ -72,7 +72,7 @@
                         <h4 data-toc-skip class="author">Amere
 Roussell</h4>
             
-            <h4 data-toc-skip class="date">2022-11-28</h4>
+            <h4 data-toc-skip class="date">2022-11-29</h4>
       
       
       <div class="hidden name"><code>PackageTutorial.Rmd</code></div>
@@ -93,16 +93,16 @@ check, and graph there data.</p>
 <h3 id="download-the-package">Download The Package<a class="anchor" aria-label="anchor" href="#download-the-package"></a>
 </h3>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"Omnimere/Big.Job"</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"Omnimere/Roussell_pkg"</span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">Big.Job</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="installation-instructions">Installation Instructions<a class="anchor" aria-label="anchor" href="#installation-instructions"></a>
 </h3>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"phytools"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"tidyverse"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"ggplot"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"tidyverse"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"ggplot"</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span></code></pre></div>
 <p>To download the data use the code below.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/download.file.html" class="external-link">download.file</a></span><span class="op">(</span>url<span class="op">=</span><span class="st">"https://raw.githubusercontent.com/Omnimere/Roussell_pkg/master/Data/simulated_data_pps_data.csv"</span>, destfile <span class="op">=</span> <span class="st">"/cloud/project/simulated_data_pps_data.csv"</span><span class="op">)</span></span></code></pre></div>
@@ -120,33 +120,26 @@ that contain data. Which allows easier use of the data set.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/Trial.html">Trial</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">column1</span>, <span class="va">column2</span>, <span class="va">column3</span>, <span class="va">column4</span>, <span class="va">column5</span>, <span class="va">column6</span>, <span class="va">column7</span>, <span class="va">column8</span>, <span class="va">column9</span>, <span class="va">column10</span>, <span class="va">column11</span>, <span class="va">column12</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">Data</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/Trial.html">Trial</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">Theta</span>, <span class="va">Tajima.D</span>, <span class="va">Tajima.Pi</span>, <span class="va">Segregating.Sites</span>, <span class="va">Max.Pairwise.Difference</span>, <span class="va">Max.Pairwise.Difference.Excluding.Ambiguous</span>, <span class="va">Max.Variable.Block.Length</span>, <span class="va">Max.Variable.Block.Length.Excluding.Ambiguous</span>, <span class="va">Min.Pairwise.Difference</span>, <span class="va">Min.Pairwise.Difference.Excluding.Ambiguous</span>, <span class="va">Number.Invariable.Block.Excluding.Ambiguous</span><span class="op">)</span></span></code></pre></div>
-<p>Once the data set is minized now we want to get rid of any NA’s
-before we continue onward. This function will remove NA’s and give TRUE
-response to let the user know that NA’s have been removed.</p>
+<code class="sourceCode R"><span><span class="va">Dataclean</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/Trial.html">Trial</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">Theta</span>, <span class="va">Tajima.D</span>, <span class="va">Tajima.Pi</span>, <span class="va">Segregating.Sites</span>, <span class="va">Max.Pairwise.Difference</span>, <span class="va">Max.Pairwise.Difference.Excluding.Ambiguous</span>, <span class="va">Max.Variable.Block.Length</span>, <span class="va">Max.Variable.Block.Length.Excluding.Ambiguous</span>, <span class="va">Min.Pairwise.Difference</span>, <span class="va">Min.Pairwise.Difference.Excluding.Ambiguous</span>, <span class="va">Number.Invariable.Block.Excluding.Ambiguous</span><span class="op">)</span></span></code></pre></div>
+<p>After the data set is saved we can now start using the data. The
+function below allows the user to make another data set of three with
+two columns of choice and a column that needs a mean and make a new mean
+column. It will allow the user to visually see and compare the columns
+to the mean and save to use to make graphs.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/non.html">non</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">Dataclean</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/non.html">non</a></span><span class="op">(</span><span class="va">Data</span><span class="op">)</span></span></code></pre></div>
-<p>After the now clean data set is saved we can now start using the
-data. The function below allows the user to make another data set of
-three with two columns of choice and a column that needs a mean and make
-a new mean column. It will allow the user to visually see and compare
-the columns to the mean and save to use to make graphs.</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/midmean.html">midmean</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">column1</span>, <span class="va">column2</span>, <span class="va">mean</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/midmean.html">midmean</a></span><span class="op">(</span><span class="va">Dataclean</span>, <span class="va">Segregating.Sites</span>, <span class="va">Tajima.Pi</span>, <span class="va">Tajima.Pi</span><span class="op">)</span></span></code></pre></div>
 <p>###Now its time to make some graphs.</p>
-<p>The first graph that will be made will be the line graph. The graph
-is used to show the relationship between two columns. With the data
-provided the x value will be used as Segregating.Sites and the y values
-as Tajima.Pi. This check is done to make sure that Tajima.Pi is using
-Segregating.Sites. If the line graph should go diagonal showing that
-Tajima.Pi is using Segregating.Sites.</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<p>The first graph that will be made will be the linear regression. The
+graph is used to show the relationship between two columns. With the
+data provided the x value will be used as Segregating.Sites and the y
+values as Tajima.Pi. This check is done to make sure that Tajima.Pi is
+using Segregating.Sites. If the dots are close to the linear regression
+then it means that Tajima.Pi incorporates Segregating.Sites..</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/Graph.html">Graph</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">column1</span>, <span class="va">column2</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/Graph.html">Graph</a></span><span class="op">(</span><span class="va">Dataclean</span>, <span class="va">Segregating.Sites</span>, <span class="va">Tajima.Pi</span><span class="op">)</span></span></code></pre></div>
 <p>The next graph will be a histogram that shows the distribution of
 values in a selected column. This is used to see each value distribution
@@ -154,10 +147,20 @@ of the columns. With Number.Invariable.Block.Excluding.Ambiguous from
 just eyeing it mainly zeros and a few ones can be seen. So we want to
 know the amount of each value and to see if it more than just one and
 zero.</p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/Histo.html">Histo</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">column</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/Histo.html">Histo</a></span><span class="op">(</span><span class="va">Dataclean</span>, <span class="va">Number.Invariable.Block.Excluding.Ambiguous</span><span class="op">)</span></span></code></pre></div>
+<p>With the last function it will make a scatter plot. Segregating.Sites
+and Max.Pairwise.Difference is used to see the relation with the max
+difference with the segregating sites. The output should be many blue
+dots scattered going diagonal to the right. This shows that as the
+Segregating.Sites increase the Max.Pairwise.Difference increases and the
+amount of those differences increases.</p>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/Scatter.html">Scatter</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/Scatter.html">Scatter</a></span><span class="op">(</span><span class="va">Dataclean</span>, <span class="va">Segregating.Sites</span>, <span class="va">Max.Pairwise.Difference</span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
 </div>

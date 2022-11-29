@@ -2,6 +2,6 @@
 
 export(Graph)
 export(Histo)
+export(Scatter)
 export(Trial)
 export(midmean)
-export(non)

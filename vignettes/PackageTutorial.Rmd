@@ -36,6 +36,11 @@ The file will be saved as following.
 ```{r}
 data <- read.csv("../simulated_data_pps_data.csv")
 ```
+```{r}
+data <- read.csv("/cloud/project/simulated_data_pps_data.csv")
+# Use this one if first doesn't work
+```
+
 ### Functions
 
 With this function it allows the user to selected up to twelve columns to minimize the data set. For the data provided it has a total of thirty-six columns most of which are only zeros. This doesn't provide information to use to it best to minimize the data set to twelve columns that contain data. Which allows easier use of the data set.
@@ -47,19 +52,27 @@ Trial(data, column1, column2, column3, column4, column5, column6, column7, colum
 ```{r,eval=FALSE}
 Dataclean <- Trial(data, Theta, Tajima.D, Tajima.Pi, Segregating.Sites, Max.Pairwise.Difference, Max.Pairwise.Difference.Excluding.Ambiguous, Max.Variable.Block.Length, Max.Variable.Block.Length.Excluding.Ambiguous, Min.Pairwise.Difference, Min.Pairwise.Difference.Excluding.Ambiguous, Number.Invariable.Block.Excluding.Ambiguous)
 ```
+```{r,eval=FALSE}
+View(Dataclean)
+# too see minimized dataset
+```
 
-After the data set is saved we can now start using the data. The function below allows the user to make another data set of three with two columns of choice and a column that needs a mean and make a new mean column. It will allow the user to visually see and compare the columns to the mean and save to use to make graphs.
+After the data set is saved we can now start using the data. The function below allows the user to make another data set of three with two columns of choice and a column that needs a mean and make a new mean column. It will allow the user to visually see and compare the columns to the mean and save to use to make graphs or comparisions. 
 ```{r,eval=FALSE}
 midmean(data, column1, column2, mean)
 ```
 
 ```{r,eval=FALSE}
-midmean(Dataclean, Segregating.Sites, Tajima.Pi, Tajima.Pi)
+midmean(Dataclean, Segregating.Sites, Tajima.D, Tajima.Pi)
+```
+```{r,eval=FALSE}
+midmean(Dataclean, Dataclean$Segregating.Sites, Dataclean$Tajima.D, Dataclean$Tajima.Pi))
+# Use this if error says columns can't be found, after first use the error shouldn't show again.
 ```
 
 ###Now its time to make some graphs.
 
-The first graph that will be made will be the linear regression. The graph is used to show the relationship between two columns. With the data provided the x value will be used as Segregating.Sites and the y values as Tajima.Pi. This check is done to make sure that Tajima.Pi is using Segregating.Sites. If the dots are close to the linear regression then it means that Tajima.Pi incorporates Segregating.Sites..
+The first graph that will be made will be the linear regression. The graph is used to show the relationship between two columns. With the data provided the x value will be used as Segregating.Sites and the y values as Tajima.Pi. This check is done to make sure that Tajima.Pi is using Segregating.Sites. If the dots are close to the linear regression then it means that Tajima.Pi incorporates Segregating.Sites.
 ```{r,eval=FALSE}
 Graph(data, column1, column2)
 ```
@@ -68,7 +81,7 @@ Graph(data, column1, column2)
 Graph(Dataclean, Segregating.Sites, Tajima.Pi)
 ```
 
-The next graph will be a histogram that shows the distribution of values in a selected column. This is used to see each value distribution of the columns. With Number.Invariable.Block.Excluding.Ambiguous from just eyeing it mainly zeros and a few ones can be seen. So we want to know the amount of each value and to see if it more than just one and zero.
+The next graph will be a histogram that shows the distribution of values in a selected column. This is used to see each value distribution of the columns. This helps with majority of the columns in the data set, but will use Number.Invariable.Block.Excluding.Ambiguous since from just eyeing it mainly zeros and a few ones can be seen. So we want to know the amount of each value and to see if it more than just one and zero.
 ```{r,eval=FALSE}
 Histo(data, column)
 ```
